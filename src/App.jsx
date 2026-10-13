@@ -4,13 +4,15 @@ function App() {
   // ============================================================
   // API URLS
   // ============================================================
-  const AUTH_API = "http://localhost:8081/api/auth";
-  const TASK_API = "http://localhost:8081/api/tasks";
-  const SUBJECT_API = "http://localhost:8081/api/subjects";
-  const EXAM_API = "http://localhost:8081/api/exams";
-  const SESSION_API = "http://localhost:8081/api/study-sessions";
-  const GAME_API = "http://localhost:8081/api/game";
-  const SYLLABUS_API = "http://localhost:8081/api/syllabus";
+  // Use Vercel's VITE_API_BASE_URL in production; use localhost for local development.
+  const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "http://localhost:8081").replace(/\/+$/, "");
+  const AUTH_API = `${API_BASE_URL}/api/auth`;
+  const TASK_API = `${API_BASE_URL}/api/tasks`;
+  const SUBJECT_API = `${API_BASE_URL}/api/subjects`;
+  const EXAM_API = `${API_BASE_URL}/api/exams`;
+  const SESSION_API = `${API_BASE_URL}/api/study-sessions`;
+  const GAME_API = `${API_BASE_URL}/api/game`;
+  const SYLLABUS_API = `${API_BASE_URL}/api/syllabus`;
   // ============================================================
   // OPENING SCREEN
   // ============================================================
